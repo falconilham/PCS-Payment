@@ -91,7 +91,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderWidth: 1,
-        borderColor: '#A0A0A0',
     },
     justifyContentCenter: {
         flexDirection: 'row',
