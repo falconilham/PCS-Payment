@@ -199,27 +199,13 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     titleNews: {
-        fontSize: 18,
+        fontSize: 15,
         fontWeight: 'bold',
     },
     scheduleContainer: {
         padding: 10,
         marginBottom: 20,
         gap: 10,
-    },
-    card: {
-        backgroundColor: 'white',
-        padding: 10,
-        borderRadius: 10,
-        display: 'flex',
-        width: 300,
-        height: 150,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-    },
-    containerOnline: {
-        padding: 10,
     },
     imageCarousell: {
         width: 100,
@@ -257,6 +243,16 @@ const styles = StyleSheet.create({
     containerNews: {
         display: 'flex',
         flexDirection: 'column',
+        padding: 10,
+        marginBottom: 20,
+        gap: 10,
+    },
+    containerOnline: {
+        display: 'flex',
+        flexDirection: 'column',
+        padding: 10,
+        marginBottom: 20,
+        gap: 10,
     },
 });
 

@@ -1,4 +1,4 @@
-import { View, StyleSheet, Image, Text } from 'react-native';
+import { View, StyleSheet, Text, Dimensions } from 'react-native';
 import Icon from '@react-native-vector-icons/fontawesome6';
 
 const mockOnline = [
@@ -10,12 +10,12 @@ const mockOnline = [
     { firstName: 'Emma', lastName: 'Wilson' },
     { firstName: 'David', lastName: 'Taylor' },
     { firstName: 'Sophia', lastName: 'Anderson' },
+    { firstName: 'Davis', lastName: 'Wilson' },
 ];
 
 function Online() {
     return (
         <View style={styles.cardOnline}>
-            <Image style={styles.imageCarousell} />
             <View style={styles.listOnline}>
                 {mockOnline.map(({ firstName, lastName }, index) => (
                     <View
@@ -23,8 +23,8 @@ function Online() {
                         style={[
                             styles.wrapperProfile,
                             {
-                                zIndex: mockOnline.length + index, // Higher zIndex for earlier items
-                                left: index * 40, // Adjust spacing for visibility
+                                zIndex: mockOnline.length + index,
+                                left: index * 35,
                             },
                         ]}
                     >
@@ -32,11 +32,17 @@ function Online() {
                             <Icon name="user" size={15} color="white" />
                         </View>
                         <View style={styles.wrapperName}>
-                            <Text>{firstName}</Text>
+                            <Text style={styles.firstName}>{firstName}</Text>
                             <Text style={styles.lastName}>{lastName}</Text>
                         </View>
                     </View>
                 ))}
+                <View style={[styles.wrapperProfile, { left: 9 * 35 }]}>
+                    <View style={[styles.onlineImage, styles.counterImage]}>
+                        <Text style={styles.counterText}>10</Text>
+                        <Text style={styles.counterText}>More</Text>
+                    </View>
+                </View>
             </View>
         </View>
     );
@@ -49,49 +55,52 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     wrapperProfile: {
-        flexDirection: 'column',
+        width: '10%',
         alignItems: 'center',
+        left: '-50%',
         position: 'absolute',
     },
     onlineImage: {
         borderRadius: 25,
         backgroundColor: '#A0A0A0',
-        width: 50,
-        height: 50,
+        width: 40,
+        height: 40,
         borderWidth: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        display: 'flex',
     },
-    firstName: {
-        fontSize: 5,
-    },
-    lastName: {
+    counterText: {
+        color: 'white',
+        fontWeight: 'bold',
         fontSize: 10,
     },
+    firstName: {
+        fontSize: 10,
+        fontWeight: 'bold',
+    },
+    lastName: {
+        fontSize: 8,
+    },
     cardOnline: {
-        backgroundColor: 'white',
-        marginTop: 10,
         padding: 10,
         borderRadius: 10,
         width: '100%',
-        height: 150,
+        height: 100,
+        display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        shadowColor: '#000',
-        shadowOpacity: 0.2,
-        shadowOffset: { width: 0, height: 2 },
-        shadowRadius: 5,
-        elevation: 5,
+        borderWidth: 1,
+        borderColor: '#A0A0A0',
+    },
+    justifyContentCenter: {
+        flexDirection: 'row',
     },
     listOnline: {
         width: '100%',
-        height: 100,
-        position: 'relative',
-    },
-    imageCarousell: {
-        width: '100%',
+        display: 'flex',
         height: '100%',
-        position: 'absolute',
+        alignContent: 'center',
     },
 });
 
