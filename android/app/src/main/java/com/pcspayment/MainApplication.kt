@@ -1,4 +1,4 @@
-package com.PCSpayment
+package com.pcspayment
 
 import android.app.Application
 import com.facebook.react.PackageList

@@ -43,6 +43,7 @@ const CarouselCards = () => {
                 onSnapToItem={(i) => setIndex(i)}
                 useScrollView
                 autoplay
+                interval={1000}
             />
             <Pagination
                 dotsLength={data.length}
