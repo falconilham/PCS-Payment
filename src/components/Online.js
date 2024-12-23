@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text, Dimensions } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 import Icon from '@react-native-vector-icons/fontawesome6';
 
 const mockOnline = [
