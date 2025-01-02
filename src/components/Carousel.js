@@ -42,6 +42,7 @@ const CarouselCards = () => {
                 itemWidth={ITEM_WIDTH}
                 onSnapToItem={(i) => setIndex(i)}
                 useScrollView
+                index={index}
                 autoplay
                 interval={1000}
             />
@@ -49,7 +50,8 @@ const CarouselCards = () => {
                 dotsLength={data.length}
                 activeDotIndex={index}
                 carouselRef={isCarousel}
-                dotStyle={styles.dotStyle}
+                dotStyle={styles.dotStyleActive}
+                inactiveDotStyle={styles.dotStyle}
                 inactiveDotOpacity={0.4}
                 inactiveDotScale={0.6}
                 tappableDots={true}
@@ -58,9 +60,9 @@ const CarouselCards = () => {
     );
 };
 
-const CarouselCardItem = ({ item, ...props }) => {
+const CarouselCardItem = ({ item, index, ...props }) => {
     return (
-        <View key={props.index} style={styles.cardCarousell}>
+        <View key={index} style={styles.cardCarousell} {...props}>
             <View style={styles.cardCarousellHeader}>
                 <View style={styles.cardCarousellHeaderLeft}>
                     <View style={styles.cardCarousellHeaderLeftImage}>
@@ -87,6 +89,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
+        height: 220,
         alignItems: 'center',
     },
     cardCarousell: {
@@ -99,6 +102,14 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         gap: 10,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 6,
+        },
+        shadowOpacity: 0.37,
+        shadowRadius: 7.49,
+        elevation: 12,
     },
     cardCarousellHeaderRight: {
         display: 'flex',
@@ -129,12 +140,25 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    dotStyle: {
-        width: 10,
-        height: 10,
-        borderRadius: 5,
+    wrapperDot: {
+        display: 'flex',
+        flexDirection: 'row',
+        gap: 3,
+        justifyContent: 'space-between',
+    },
+    dotStyleActive: {
+        width: 13,
+        height: 13,
+        borderRadius: '50%',
         marginHorizontal: 0,
         backgroundColor: '#F84331',
+    },
+    dotStyle: {
+        width: 13,
+        height: 13,
+        borderRadius: '50%',
+        marginHorizontal: 0,
+        backgroundColor: '#D9D9D9',
     },
     font20: {
         fontSize: 20,

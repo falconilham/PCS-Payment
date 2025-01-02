@@ -244,7 +244,6 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         padding: 10,
-        marginBottom: 20,
         gap: 10,
     },
     containerOnline: {

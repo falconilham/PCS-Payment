@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
     onlineImage: {
         borderRadius: 25,
         backgroundColor: '#A0A0A0',
+        borderColor: 'white',
         width: 40,
         height: 40,
         borderWidth: 1,
@@ -90,7 +91,18 @@ const styles = StyleSheet.create({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        borderWidth: 1,
+        backgroundColor: 'white',
+        flexDirection: 'column',
+        gap: 10,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 7,
+        },
+        shadowOpacity: 0.43,
+        shadowRadius: 9.51,
+
+        elevation: 15,
     },
     justifyContentCenter: {
         flexDirection: 'row',
