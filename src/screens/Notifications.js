@@ -94,6 +94,20 @@ const NotificationItem = ({ id, type, status, date, message, alreadyRead, setRea
         rejected: styles.positionIconRejected,
         pending: styles.positionIconPending,
     };
+
+    const SplitMessage = ({ message }) => {
+        let modifiedMessage = message;
+        const statusArray = ['approved', 'rejected', 'pending', 'paid', 'reviewed', 'processed'];
+        const checkStatus = statusArray.find((status) => modifiedMessage.toLowerCase().includes(status));
+        const split = modifiedMessage.split(checkStatus);
+        return (
+            <Text>
+                {split[0]}
+                <Text style={styles.textBold}>{checkStatus}</Text>
+                {split[1]}
+            </Text>
+        )
+    };
     return (
         <TouchableOpacity style={alreadyRead ? styles.notificationsRead : styles.notificationsUnread} onPress={() => setReadNotification(id)}>
             <View style={styles.statusIcon}>
@@ -107,7 +121,9 @@ const NotificationItem = ({ id, type, status, date, message, alreadyRead, setRea
                     <Text style={styles.notificationType}>{type}</Text>
                     <Text style={styles.notificationDate}>{date}</Text>
                 </View>
-                <Text style={styles.notificationMessage}>{message}</Text>
+                <Text style={styles.notificationMessage}>
+                    <SplitMessage message={message} />
+                </Text>
             </View>
         </TouchableOpacity>
     );
@@ -196,6 +212,9 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     notificationType: {
+        fontWeight: 'bold',
+    },
+    textBold: {
         fontWeight: 'bold',
     },
     notificationDate: {

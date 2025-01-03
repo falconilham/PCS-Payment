@@ -37,7 +37,14 @@ const CarouselCards = () => {
                 layoutCardOffset={9}
                 ref={isCarousel}
                 data={data}
-                renderItem={(item) => CarouselCardItem(item)}
+                renderItem={({ item }) =>
+                    <CarouselCardItem
+                        hari={item?.hari}
+                        date={item?.date}
+                        name={item?.name}
+                        body={item?.body}
+                    />
+                }
                 sliderWidth={1000}
                 itemWidth={ITEM_WIDTH}
                 onSnapToItem={(i) => setIndex(i)}
@@ -60,26 +67,25 @@ const CarouselCards = () => {
     );
 };
 
-const CarouselCardItem = ({ item }, index) => {
-    console.log({ item });
+const CarouselCardItem = ({ hari, date, name, body }) => {
     return (
-        <View key={index} style={styles.cardCarousell}>
+        <View key={name} style={styles.cardCarousell}>
             <View style={styles.cardCarousellHeader}>
                 <View style={styles.cardCarousellHeaderLeft}>
                     <View style={styles.cardCarousellHeaderLeftImage}>
                         <Icon name="user" size={20} color="white" />
                     </View>
                     <View>
-                        <Text style={[styles.textBold, styles.textRed, styles.font15]}>{item.name}</Text>
+                        <Text style={[styles.textBold, styles.textRed, styles.font15]}>{name}</Text>
                     </View>
                 </View>
                 <View style={styles.cardCarousellHeaderRight}>
-                    <Text>{item.hari}</Text>
-                    <Text>{item.date}</Text>
+                    <Text>{hari}</Text>
+                    <Text>{date}</Text>
                 </View>
             </View>
             <View>
-                <Text>{item.body}</Text>
+                <Text>{body}</Text>
             </View>
         </View>
     );
