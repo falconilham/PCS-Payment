@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
         fontFamily: 'IstokWeb-Bold',
         fontSize: 16,
         flex: 1,
-        gap: 10,
+        // gap: 10,
     },
     header: {
         display: 'flex',
@@ -251,7 +251,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         padding: 10,
-        marginBottom: 20,
+        marginBottom: 40,
         gap: 10,
     },
 });
