@@ -60,9 +60,10 @@ const CarouselCards = () => {
     );
 };
 
-const CarouselCardItem = ({ item, index, ...props }) => {
+const CarouselCardItem = ({ item }, index) => {
+    console.log({ item });
     return (
-        <View key={index} style={styles.cardCarousell} {...props}>
+        <View key={index} style={styles.cardCarousell}>
             <View style={styles.cardCarousellHeader}>
                 <View style={styles.cardCarousellHeaderLeft}>
                     <View style={styles.cardCarousellHeaderLeftImage}>

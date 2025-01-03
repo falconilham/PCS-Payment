@@ -80,7 +80,7 @@ const ConditionalTabBarIcon = ({ iconName, color, size, isCheckOut }) => {
 function TabNavigator() {
   return (
     <Tab.Navigator>
-      {screens.map(({ name, component, iconName, options }, index) => {
+      {screens.map(({ name, component, iconName, options }) => {
         const isCheckOut = name === 'Check Out';
         return (
           <Tab.Screen

@@ -24,7 +24,7 @@ function Online() {
                             styles.wrapperProfile,
                             {
                                 zIndex: mockOnline.length + index,
-                                left: index * 35,
+                                left: index * 33,
                             },
                         ]}
                     >
@@ -37,14 +37,14 @@ function Online() {
                         </View>
                     </View>
                 ))}
-                <View style={[styles.wrapperProfile, { left: 9 * 35 }]}>
+                <View style={[styles.wrapperProfile, { left: 9 * 33 }]}>
                     <View style={[styles.onlineImage, styles.counterImage]}>
                         <Text style={styles.counterText}>10</Text>
                         <Text style={styles.counterText}>More</Text>
                     </View>
                 </View>
             </View>
-        </View>
+        </View >
     );
 }
 
