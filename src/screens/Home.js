@@ -102,7 +102,8 @@ function Home() {
 
 const styles = StyleSheet.create({
     container: {
-        paddingHorizontal: 10,
+        paddingHorizontal: 20,
+        paddingVertical: 0,
         fontFamily: 'IstokWeb-Bold',
         fontSize: 16,
         flex: 1,
